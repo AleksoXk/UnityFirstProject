@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask WhatIsGround;
     private bool grounded;
+    private bool doubleJump;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +21,29 @@ public class Player : MonoBehaviour
         
     }
 
+    void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, WhatIsGround);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        if (grounded)
+            doubleJump = false;
+
+        if(Input.GetKeyDown(KeyCode.W)&& grounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
-        
+            Jump();
         }
-        if(Input.GetKey(KeyCode.D))
+
+        if (Input.GetKeyDown(KeyCode.W)&& !grounded && !doubleJump)
+        {
+            Jump();
+            doubleJump = true;
+        }
+
+        if (Input.GetKey(KeyCode.D))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
@@ -37,5 +53,15 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         }
+
+
+
+
     }
+
+    void Jump()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, jumpHeight);
+    }
+
 }

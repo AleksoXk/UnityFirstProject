@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ziemia (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4522492301499314383, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5363905334518707643, guid: 099ed46fd641fdd469b9a8de4681a080,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,6 +186,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099ed46fd641fdd469b9a8de4681a080, type: 3}
+--- !u!1 &201177081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 201177082}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &201177082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201177081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.006, y: -0.338, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 275799927}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275799922
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +230,7 @@ GameObject:
   - component: {fileID: 275799924}
   - component: {fileID: 275799928}
   - component: {fileID: 275799929}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -217,7 +252,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.247}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.255
 --- !u!50 &275799925
 Rigidbody2D:
   serializedVersion: 4
@@ -295,9 +330,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275799922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.285, y: -0.752, z: 0}
+  m_LocalPosition: {x: -2.522, y: -0.748, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 201177082}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -329,13 +365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 196c128326865b343998bd06f1f2d527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 3
-  moveSpeed: 3
-  groundCheck: {fileID: 0}
-  groundCheckRadius: 0
+  jumpHeight: 2
+  moveSpeed: 2
+  groundCheck: {fileID: 201177082}
+  groundCheckRadius: 0.17
   WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!4 &311391802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5363905334518707643, guid: 099ed46fd641fdd469b9a8de4681a080,
@@ -436,6 +472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ziemia (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4522492301499314383, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5363905334518707643, guid: 099ed46fd641fdd469b9a8de4681a080,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -505,6 +546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ziemia (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4522492301499314383, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5363905334518707643, guid: 099ed46fd641fdd469b9a8de4681a080,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -573,7 +619,7 @@ GameObject:
   - component: {fileID: 800924129}
   - component: {fileID: 800924131}
   - component: {fileID: 800924130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassHalf_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,6 +747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ziemia (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4522492301499314383, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5363905334518707643, guid: 099ed46fd641fdd469b9a8de4681a080,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -769,7 +820,7 @@ GameObject:
   - component: {fileID: 1260102726}
   - component: {fileID: 1260102728}
   - component: {fileID: 1260102727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassHalf_right (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +934,7 @@ GameObject:
   - component: {fileID: 1686032799}
   - component: {fileID: 1686032801}
   - component: {fileID: 1686032800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: grassHalf_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942498595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: setBlocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,6 +1098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ziemia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4522492301499314383, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5363905334518707643, guid: 099ed46fd641fdd469b9a8de4681a080,
         type: 3}
@@ -1102,6 +1158,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799584454399357721, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1659168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799584454399357721, guid: 099ed46fd641fdd469b9a8de4681a080,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.44763613
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 099ed46fd641fdd469b9a8de4681a080, type: 3}
